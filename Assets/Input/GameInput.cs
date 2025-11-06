@@ -748,6 +748,17 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""17ad078e-e748-4faa-948f-a5246934ccee"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Submit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""937249a0-4910-4656-97f1-7f407145a0a2"",
                     ""path"": ""*/{Cancel}"",
                     ""interactions"": """",
