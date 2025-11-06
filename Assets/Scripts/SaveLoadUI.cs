@@ -1,14 +1,20 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SaveLoadUI : MonoBehaviour
 {
     public TextMeshProUGUI[] slotTexts = new TextMeshProUGUI[3];
+    public GameObject panelSaveLoadUI;
+    public GameObject panelMenuUI;
+    public GameObject panelconfirmUI;
     private int selectedSlot = -1;
 
-    private void Start()
+    private void Awake()
     {
         RefreshSlots();
+        panelSaveLoadUI.SetActive(false);
+        panelconfirmUI.SetActive(false);
     }
 
     // Dipanggil saat tombol slot ditekan
@@ -90,5 +96,41 @@ public class SaveLoadUI : MonoBehaviour
                 slotTexts[i].text = "No Data";
             }
         }
+    }
+
+    public void OnClick_Save()
+    {
+        panelSaveLoadUI.SetActive(true);
+        panelMenuUI.SetActive(false);
+    }
+
+    public void OnClick_Load()
+    {
+
+    }
+
+    public void OnClick_SaveBack()
+    {
+        panelSaveLoadUI.SetActive(false);
+        panelMenuUI.SetActive(true);
+    }
+
+    public void OnClick_BackMainMenu(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
+
+    public void OnClick_Confirm_Yes()
+    {
+        SaveToSlot();
+        panelSaveLoadUI.SetActive(false);
+        panelconfirmUI.SetActive(false);
+        panelMenuUI.SetActive(true);
+    }
+    
+    public void OnClick_Confirm_No()
+    {
+        panelSaveLoadUI.SetActive(false);
+        panelMenuUI.SetActive(true);
     }
 }
