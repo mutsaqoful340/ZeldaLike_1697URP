@@ -10,7 +10,7 @@ public class MainMenuSelector : MonoBehaviour
     public GameObject panelConfirm;
 
     public TextMeshProUGUI[] slotTexts = new TextMeshProUGUI[3];
-    private int selectedSlot = -1;
+    //private int selectedSlot = -1;
 
     private void Start()
     {
